@@ -1,0 +1,11 @@
+/node_modules
+/lib
+
+.DS_Store
+yarn-debug.log*
+yarn-error.log*
+
+*.tgz
+
+# temp
+/docs

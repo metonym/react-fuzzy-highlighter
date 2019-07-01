@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "lib": ["esnext", "dom"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "./lib",
+    "removeComments": true,
+    "strict": true,
+    "target": "es6"
+  },
+  "include": ["./src"]
+}

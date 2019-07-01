@@ -1,0 +1,7 @@
+{
+  "extends": ["tslint:latest", "tslint-config-prettier"],
+  "rules": {
+    "no-implicit-dependencies": [true, ["enzyme", "enzyme-adapter-react-16"]],
+    "object-literal-sort-keys": false
+  }
+}

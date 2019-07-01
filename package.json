@@ -1,0 +1,51 @@
+{
+  "name": "react-fuzzy-highlight",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "Lightweight fuzzy search highlight component using fuse.js",
+  "author": "Eric Liu (https://github.com/metonym)",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "develop": "tsc -w",
+    "build": "rm -rf lib && tsc",
+    "test": "jest",
+    "lint": "tslint --fix -p . -c tslint.json",
+    "prepublish": "yarn build",
+    "docs": "bash scripts/docs.sh"
+  },
+  "dependencies": {
+    "fuse.js": "^3.4.5"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-conventional": "^8.0.0",
+    "@types/enzyme": "^3.9.4",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/jest": "^24.0.15",
+    "@types/react": "^16.8.22",
+    "@types/react-dom": "^16.8.4",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "husky": "^2.7.0",
+    "jest": "^24.8.0",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^1.11.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.5.2"
+  },
+  "peerDependencies": {
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint && pretty-quick --staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
