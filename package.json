@@ -48,5 +48,20 @@
       "pre-commit": "yarn lint && pretty-quick --staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/metonym/react-fuzzy-highlight.git"
+  },
+  "homepage": "https://github.com/metonym/react-fuzzy-highlight",
+  "keywords": [
+    "react",
+    "fuzzy",
+    "fuse.js",
+    "highlight"
+  ],
+  "files": [
+    "lib/"
+  ],
+  "bugs": "https://github.com/metonym/react-fuzzy-highlight/issues"
 }
