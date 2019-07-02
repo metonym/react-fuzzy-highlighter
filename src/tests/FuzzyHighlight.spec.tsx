@@ -10,11 +10,10 @@ describe('FuzzyHighlight', () => {
 
   it('instantiates without crashing', () => {
     const wrapper = mount<FuzzyHighlight<{ t: string }, undefined>>(
-      <FuzzyHighlight<{ t: string }, undefined> query="" data={[{ t: '' }]}>
-        {({ results }) => JSON.stringify(results)}
-      </FuzzyHighlight>
+      <FuzzyHighlight<{ t: string }, undefined> query="" data={[{ t: '' }]} />
     );
     expect(wrapper).toBeTruthy();
+    expect(wrapper.isEmptyRender()).toEqual(true);
   });
 
   test('search method is called', () => {
