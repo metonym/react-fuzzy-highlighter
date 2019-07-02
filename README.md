@@ -1,5 +1,9 @@
 # react-fuzzy-highlight
 
+[![NPM][npm]][npm-url]
+[![Build][build]][build-badge]
+[![Coverage][codecov-shield]][codecov]
+
 > Lightweight fuzzy search highlighting component using [`fuse.js`](https://github.com/krisk/Fuse).
 
 ## Install
@@ -47,3 +51,10 @@ export default class extends React.Component {
 ## License
 
 [MIT](LICENSE)
+
+[npm]: https://img.shields.io/npm/v/react-fuzzy-highlight.svg?color=blue
+[npm-url]: https://npmjs.com/package/react-fuzzy-highlight
+[build]: https://travis-ci.com/metonym/react-fuzzy-highlight.svg?branch=master
+[build-badge]: https://travis-ci.com/metonym/react-fuzzy-highlight
+[codecov]: https://codecov.io/gh/metonym/react-fuzzy-highlight
+[codecov-shield]: https://img.shields.io/codecov/c/github/metonym/react-fuzzy-highlight.svg
