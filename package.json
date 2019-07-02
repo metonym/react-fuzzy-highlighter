@@ -1,5 +1,5 @@
 {
-  "name": "react-fuzzy-highlight",
+  "name": "react-fuzzy-highlighter",
   "version": "0.1.0",
   "license": "MIT",
   "description": "Lightweight fuzzy search highlighting component using fuse.js",
@@ -51,9 +51,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/metonym/react-fuzzy-highlight.git"
+    "url": "https://github.com/metonym/react-fuzzy-highlighter.git"
   },
-  "homepage": "https://github.com/metonym/react-fuzzy-highlight",
+  "homepage": "https://github.com/metonym/react-fuzzy-highlighter",
   "keywords": [
     "react",
     "fuzzy",
@@ -63,5 +63,5 @@
   "files": [
     "lib/"
   ],
-  "bugs": "https://github.com/metonym/react-fuzzy-highlight/issues"
+  "bugs": "https://github.com/metonym/react-fuzzy-highlighter/issues"
 }

@@ -1,11 +1,11 @@
 import Fuse from 'fuse.js';
 import * as React from 'react';
 
-class FuzzyHighlight<T, O> extends React.Component<
-  IFuzzyHighlightProps<T, O>,
-  IFuzzyHighlightState<T>
+class FuzzyHighlighter<T, O> extends React.Component<
+  IFuzzyHighlighterProps<T, O>,
+  IFuzzyHighlighterState<T>
 > {
-  public readonly state: IFuzzyHighlightState<T> = {
+  public readonly state: IFuzzyHighlighterState<T> = {
     results: [],
     cache: {},
     info: {
@@ -20,7 +20,7 @@ class FuzzyHighlight<T, O> extends React.Component<
     this.search();
   }
 
-  public componentDidUpdate(prevProps: IFuzzyHighlightProps<T, O>) {
+  public componentDidUpdate(prevProps: IFuzzyHighlighterProps<T, O>) {
     if (prevProps.query !== this.props.query) {
       this.search();
     }
@@ -70,14 +70,14 @@ class FuzzyHighlight<T, O> extends React.Component<
 type Data<T> = ReadonlyArray<T>;
 type Options<O> = Fuse.FuseOptions<Readonly<O>>;
 
-interface IFuzzyHighlightProps<T, O> {
+interface IFuzzyHighlighterProps<T, O> {
   query: string;
   data: Data<T>;
   options?: Options<O>;
   children?: (params: { results: Data<T>; timing: number }) => React.ReactNode;
 }
 
-interface IFuzzyHighlightState<T> {
+interface IFuzzyHighlighterState<T> {
   results: Data<T>;
   cache: {
     [query: string]: Data<T>;
@@ -87,4 +87,4 @@ interface IFuzzyHighlightState<T> {
   };
 }
 
-export default FuzzyHighlight;
+export default FuzzyHighlighter;

@@ -1,4 +1,4 @@
-# react-fuzzy-highlight
+# react-fuzzy-highlighter
 
 [![NPM][npm]][npm-url]
 [![Build][build]][build-badge]
@@ -9,19 +9,19 @@
 ## Install
 
 ```bash
-yarn add react-fuzzy-highlight
+yarn add react-fuzzy-highlighter
 ```
 
 ## Usage
 
 ```jsx
 import * as React from 'react';
-import FuzzyHighlight from 'react-fuzzy-highlight';
+import FuzzyHighlighter from 'react-fuzzy-highlighter';
 
 export default class extends React.Component {
   render() {
     return (
-      <FuzzyHighlight
+      <FuzzyHighlighter
         query="old"
         data={[
           { title: "Old Man's War" },
@@ -42,7 +42,7 @@ export default class extends React.Component {
         {({ results }) => {
           return JSON.stringify(results, null, 2);
         }}
-      </FuzzyHighlight>
+      </FuzzyHighlighter>
     );
   }
 }
@@ -52,9 +52,9 @@ export default class extends React.Component {
 
 [MIT](LICENSE)
 
-[npm]: https://img.shields.io/npm/v/react-fuzzy-highlight.svg?color=blue
-[npm-url]: https://npmjs.com/package/react-fuzzy-highlight
-[build]: https://travis-ci.com/metonym/react-fuzzy-highlight.svg?branch=master
-[build-badge]: https://travis-ci.com/metonym/react-fuzzy-highlight
-[codecov]: https://codecov.io/gh/metonym/react-fuzzy-highlight
-[codecov-shield]: https://img.shields.io/codecov/c/github/metonym/react-fuzzy-highlight.svg
+[npm]: https://img.shields.io/npm/v/react-fuzzy-highlighter.svg?color=blue
+[npm-url]: https://npmjs.com/package/react-fuzzy-highlighter
+[build]: https://travis-ci.com/metonym/react-fuzzy-highlighter.svg?branch=master
+[build-badge]: https://travis-ci.com/metonym/react-fuzzy-highlighter
+[codecov]: https://codecov.io/gh/metonym/react-fuzzy-highlighter
+[codecov-shield]: https://img.shields.io/codecov/c/github/metonym/react-fuzzy-highlighter.svg

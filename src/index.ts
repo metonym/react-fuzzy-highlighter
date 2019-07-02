@@ -1,3 +1,3 @@
-import FuzzyHighlight from './FuzzyHighlight';
+import FuzzyHighlighter from './FuzzyHighlighter';
 
-export default FuzzyHighlight;
+export default FuzzyHighlighter;

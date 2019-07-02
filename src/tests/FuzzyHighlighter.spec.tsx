@@ -1,26 +1,26 @@
 import { mount } from 'enzyme';
 import { FuseOptions } from 'fuse.js';
 import * as React from 'react';
-import FuzzyHighlight from '../FuzzyHighlight';
+import FuzzyHighlighter from '../FuzzyHighlighter';
 
-describe('FuzzyHighlight', () => {
+describe('FuzzyHighlighter', () => {
   afterEach(() => {
     jest.clearAllMocks();
   });
 
   it('instantiates without crashing', () => {
-    const wrapper = mount<FuzzyHighlight<{ t: string }, undefined>>(
-      <FuzzyHighlight<{ t: string }, undefined> query="" data={[{ t: '' }]} />
+    const wrapper = mount<FuzzyHighlighter<{ t: string }, undefined>>(
+      <FuzzyHighlighter<{ t: string }, undefined> query="" data={[{ t: '' }]} />
     );
     expect(wrapper).toBeTruthy();
     expect(wrapper.isEmptyRender()).toEqual(true);
   });
 
   test('search method is called', () => {
-    const wrapper = mount<FuzzyHighlight<{ t: string }, undefined>>(
-      <FuzzyHighlight<{ t: string }, undefined> query="" data={[{ t: '' }]}>
+    const wrapper = mount<FuzzyHighlighter<{ t: string }, undefined>>(
+      <FuzzyHighlighter<{ t: string }, undefined> query="" data={[{ t: '' }]}>
         {({ results }) => JSON.stringify(results)}
-      </FuzzyHighlight>
+      </FuzzyHighlighter>
     );
 
     const search = jest.spyOn(wrapper.instance(), 'search');
@@ -31,8 +31,8 @@ describe('FuzzyHighlight', () => {
   });
 
   test('search has cache', () => {
-    const wrapper = mount<FuzzyHighlight<{ t: string }, undefined>>(
-      <FuzzyHighlight<{ title: string }, FuseOptions<{ title: string }>>
+    const wrapper = mount<FuzzyHighlighter<{ t: string }, undefined>>(
+      <FuzzyHighlighter<{ title: string }, FuseOptions<{ title: string }>>
         query=""
         data={[
           { title: "Old Man's War" },
@@ -51,7 +51,7 @@ describe('FuzzyHighlight', () => {
         }}
       >
         {({ results }) => JSON.stringify(results)}
-      </FuzzyHighlight>
+      </FuzzyHighlighter>
     );
 
     expect(wrapper.state().cache).toEqual({
