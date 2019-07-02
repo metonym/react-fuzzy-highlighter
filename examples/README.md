@@ -1,3 +1,3 @@
-# react-fuzzy-highlight/examples
+# react-fuzzy-highlighter/examples
 
-> Examples using `react-fuzzy-highlight`.
+> Examples using `react-fuzzy-highlighter`.

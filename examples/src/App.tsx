@@ -1,5 +1,5 @@
 import * as React from 'react';
-import FuzzyHighlight from 'react-fuzzy-highlight';
+import FuzzyHighlighter from 'react-fuzzy-highlighter';
 import data from './data/default.json';
 
 interface IAppState {
@@ -21,7 +21,7 @@ class App extends React.Component<{}, IAppState> {
           value={this.state.query}
           onChange={this.handleChange}
         />
-        <FuzzyHighlight
+        <FuzzyHighlighter
           query={this.state.query}
           data={this.state.data}
           options={{
@@ -43,7 +43,7 @@ class App extends React.Component<{}, IAppState> {
               </>
             );
           }}
-        </FuzzyHighlight>
+        </FuzzyHighlighter>
       </>
     );
   }
