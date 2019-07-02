@@ -1,6 +1,6 @@
 {
   "name": "react-fuzzy-highlight",
-  "version": "0.0.1-alpha.2",
+  "version": "0.1.0",
   "license": "MIT",
   "description": "Lightweight fuzzy search highlighting component using fuse.js",
   "author": "Eric Liu (https://github.com/metonym)",
