@@ -1,11 +1,7 @@
 {
+  "extends": "../tsconfig.json",
   "compilerOptions": {
-    "jsx": "react",
-    "lib": ["esnext", "dom"],
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "strict": true,
-    "target": "es6"
+    "noEmit": true
   },
   "include": ["./src"]
 }
