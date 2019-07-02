@@ -1,7 +1,10 @@
 language: node_js
 
-node_js: 10
+node_js: stable
 
 cache: yarn
 
-install: yarn
+script:
+  - yarn test --coverage
+
+after_success: npx codecov
