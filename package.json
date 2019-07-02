@@ -2,17 +2,18 @@
   "name": "react-fuzzy-highlight",
   "version": "0.1.0",
   "license": "MIT",
-  "description": "Lightweight fuzzy search highlight component using fuse.js",
+  "description": "Lightweight fuzzy search highlighting component using fuse.js",
   "author": "Eric Liu (https://github.com/metonym)",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
     "develop": "tsc -w",
     "build": "rm -rf lib && tsc",
-    "test": "jest",
+    "build:docs": "bash scripts/docs.sh",
     "lint": "tslint --fix -p . -c tslint.json",
-    "prepublish": "yarn build",
-    "docs": "bash scripts/docs.sh"
+    "test": "jest",
+    "test:tdd": "jest --watch",
+    "prepublish": "yarn build"
   },
   "dependencies": {
     "fuse.js": "^3.4.5"
