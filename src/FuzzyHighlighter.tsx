@@ -24,6 +24,17 @@ class FuzzyHighlighter<T, O> extends React.Component<
     if (prevProps.query !== this.props.query) {
       this.search();
     }
+
+    if (prevProps.data !== this.props.data) {
+      this.setState(
+        {
+          cache: {}
+        },
+        () => {
+          this.search();
+        }
+      );
+    }
   }
 
   public render() {
