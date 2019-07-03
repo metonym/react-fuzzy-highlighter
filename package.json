@@ -9,7 +9,6 @@
   "scripts": {
     "develop": "tsc -w",
     "build": "rm -rf lib && tsc -p tsconfig.prod.json",
-    "build:docs": "bash scripts/docs.sh",
     "lint": "tslint --fix -p . -c tslint.json",
     "test": "jest",
     "test:tdd": "jest --watch",
