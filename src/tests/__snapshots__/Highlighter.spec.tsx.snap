@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Highlighter prop \`text\` as a string 1`] = `
+<Fragment>
+  Old
+</Fragment>
+`;
+
+exports[`Highlighter prop \`text\` as an array 1`] = `
+<Fragment>
+  <mark
+    key="O0"
+  >
+    O
+  </mark>
+  ld
+</Fragment>
+`;
