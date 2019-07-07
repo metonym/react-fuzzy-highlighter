@@ -6,6 +6,8 @@
 
 > Lightweight fuzzy search highlighting component using [`fuse.js`](https://github.com/krisk/Fuse).
 
+### [Changelog](CHANGELOG.md)
+
 ## Install
 
 ```bash
