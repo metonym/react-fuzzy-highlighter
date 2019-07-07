@@ -6,7 +6,7 @@
 
 > Lightweight fuzzy search highlighting component using [`fuse.js`](https://github.com/krisk/Fuse).
 
-### [Changelog](CHANGELOG.md)
+### [Examples](examples/) · [Changelog](CHANGELOG.md)
 
 ## Install
 
@@ -41,7 +41,7 @@ export default class extends React.Component {
           keys: ['title']
         }}
       >
-        {({ results }) => {
+        {({ results, formattedResults, timing }) => {
           return JSON.stringify(results, null, 2);
         }}
       </FuzzyHighlighter>
