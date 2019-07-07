@@ -2,6 +2,7 @@
 
 [![NPM][npm]][npm-url]
 [![Build][build]][build-badge]
+[![Coverage][codecov-shield]][codecov]
 
 > Lightweight fuzzy search highlighting component using [`fuse.js`](https://github.com/krisk/Fuse).
 
