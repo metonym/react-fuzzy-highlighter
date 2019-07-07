@@ -1,27 +1,28 @@
 import * as React from 'react';
 
-function Highlighter({
-  text
-}: {
-  text: string | Array<{ text: string; isHighlighted: boolean }>;
-}) {
-  if (Array.isArray(text)) {
+function Highlighter(props: IHighlighterProps) {
+  if (Array.isArray(props.text)) {
     return (
       <>
-        {text.map((fragment, index) => {
-          const key = `${fragment}${index}`; // TODO: generate id
+        {props.text.map(({ text, isHighlighted }, index) => {
+          const key = `${text}${index}`; // TODO: generate id
 
-          if (fragment.isHighlighted) {
+          if (isHighlighted) {
             // TODO: allow custom highlight element
-            return <mark key={key}>{fragment.text}</mark>;
+            return <mark key={key}>{text}</mark>;
           }
-          return <React.Fragment key={key}>{fragment.text}</React.Fragment>;
+
+          return <React.Fragment key={key}>{text}</React.Fragment>;
         })}
       </>
     );
   }
 
-  return <>{text}</>;
+  return <>{props.text}</>;
+}
+
+interface IHighlighterProps {
+  text: string | Array<{ text: string; isHighlighted: boolean }>;
 }
 
 export { Highlighter };
