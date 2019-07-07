@@ -15,16 +15,20 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "fuse.js": "^3.4.5"
+    "fuse.js": "^3.4.5",
+    "get-value": "^3.0.1",
+    "set-value": "^3.0.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.0.0",
     "@commitlint/config-conventional": "^8.0.0",
     "@types/enzyme": "^3.9.4",
     "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/get-value": "^3.0.1",
     "@types/jest": "^24.0.15",
     "@types/react": "^16.8.22",
     "@types/react-dom": "^16.8.4",
+    "@types/set-value": "^2.0.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "husky": "^3.0.0",
