@@ -12,12 +12,6 @@
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.3",
-    "preact": "^8.4.2",
-    "preact-compat": "^3.19.0",
     "typescript": "^3.5.2"
-  },
-  "alias": {
-    "react": "preact-compat",
-    "react-dom": "preact-compat"
   }
 }

@@ -1,15 +1,21 @@
 import * as React from 'react';
-import FuzzyHighlighter from 'react-fuzzy-highlighter';
+import FuzzyHighlighter, { Highlighter } from 'react-fuzzy-highlighter';
 import data from './data/default.json';
 
 interface IAppState {
   query: string;
-  data: any[];
+  data: Array<{
+    title: string;
+    author: {
+      firstName: string;
+      lastName: string;
+    };
+  }>;
 }
 
 class App extends React.Component<{}, IAppState> {
   public state: IAppState = {
-    query: '',
+    query: 'John',
     data
   };
 
@@ -35,12 +41,38 @@ class App extends React.Component<{}, IAppState> {
             keys: ['title', 'author.firstName']
           }}
         >
-          {({ results, timing }) => {
+          {({ formattedResults }) => {
             return (
-              <>
-                <div>time: {timing}ms</div>
-                {JSON.stringify(results, null, 2)}
-              </>
+              <ul>
+                {formattedResults.map((formattedResult, resultIndex) => {
+                  if (formattedResult.formatted.title === undefined) {
+                    return null;
+                  }
+
+                  return (
+                    <li
+                      key={resultIndex}
+                      style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        marginBottom: '1rem'
+                      }}
+                    >
+                      <div>
+                        <Highlighter text={formattedResult.formatted.title} />
+                      </div>
+                      <div>
+                        <Highlighter
+                          text={formattedResult.formatted.author.firstName}
+                        />{' '}
+                        <Highlighter
+                          text={formattedResult.formatted.author.lastName}
+                        />
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
             );
           }}
         </FuzzyHighlighter>
