@@ -9,6 +9,7 @@
     "outDir": "./lib",
     "removeComments": true,
     "resolveJsonModule": true,
+    "skipLibCheck": true,
     "strict": true,
     "target": "es6"
   },
