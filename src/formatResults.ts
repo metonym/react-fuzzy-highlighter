@@ -1,7 +1,6 @@
-import get from 'get-value';
 import set from 'set-value';
-import { Result, Results } from './FuzzyHighlighter';
 import strind from 'strind';
+import { Result, Results } from './FuzzyHighlighter';
 
 interface IFinalResult<T> extends Result<T> {
   formatted: {
