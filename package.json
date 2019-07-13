@@ -17,7 +17,8 @@
   "dependencies": {
     "fuse.js": "^3.4.5",
     "get-value": "^3.0.1",
-    "set-value": "^3.0.1"
+    "set-value": "^3.0.1",
+    "strind": "^0.2.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.0.0",
