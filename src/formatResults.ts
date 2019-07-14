@@ -4,18 +4,14 @@ import { Result, Results } from './FuzzyHighlighter';
 
 function formatResults<T>(results: Results<T>): FinalResults<T> {
   const finalResults: FinalResults<T> = [];
-  const mapTextMatches = ({
-    chars: text,
-    matches
-  }: {
-    chars: string;
-    matches: boolean;
-  }) => ({ text, isHighlighted: matches });
 
   results.forEach((result, index) => {
     finalResults.push({ ...result, formatted: { ...result.item } });
     result.matches.forEach(({ indices, key, value }: IFuzzyResult) => {
-      const output = strind(value, indices, mapTextMatches);
+      const output = strind(value, indices, ({ chars: text, matches }) => ({
+        text,
+        isHighlighted: matches
+      }));
       const formattedResult = output.matched as IFormattedResult[];
       const formatted = finalResults[index].formatted as IFormatted;
 
