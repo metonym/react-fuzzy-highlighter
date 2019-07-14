@@ -6,6 +6,8 @@
 
 > Lightweight fuzzy search highlighting component using [`fuse.js`](https://github.com/krisk/Fuse).
 
+This component provides matched and unmatched text in a more iterable format.
+
 ## [Examples](examples/) · [Changelog](CHANGELOG.md)
 
 ## Install
@@ -42,7 +44,31 @@ export default class extends React.Component {
         }}
       >
         {({ results, formattedResults, timing }) => {
-          return JSON.stringify(results, null, 2);
+          return (
+            <ul>
+              {formattedResults.map((formattedResult, resultIndex) => {
+                if (formattedResult.formatted.title === undefined) {
+                  return null;
+                }
+
+                return (
+                  <li key={resultIndex}>
+                    <div>
+                      <Highlighter text={formattedResult.formatted.title} />
+                    </div>
+                    <div>
+                      <Highlighter
+                        text={formattedResult.formatted.author.firstName}
+                      />{' '}
+                      <Highlighter
+                        text={formattedResult.formatted.author.lastName}
+                      />
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          );
         }}
       </FuzzyHighlighter>
     );
