@@ -2238,6 +2238,11 @@ function-bind@^1.1.1:
   resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.1.tgz#a56899d3ea3c9bab874bb9773b7c5ede92f4895d"
   integrity sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==
 
+fuse.js@^3.4.5:
+  version "3.4.5"
+  resolved "https://registry.yarnpkg.com/fuse.js/-/fuse.js-3.4.5.tgz#8954fb43f9729bd5dbcb8c08f251db552595a7a6"
+  integrity sha512-s9PGTaQIkT69HaeoTVjwGsLfb8V8ScJLx5XGFcKHg0MqLUH/UZ4EKOtqtXX9k7AFqCGxD1aJmYb8Q5VYDibVRQ==
+
 gauge@~2.7.3:
   version "2.7.4"
   resolved "https://registry.yarnpkg.com/gauge/-/gauge-2.7.4.tgz#2c03405c7538c39d7eb37b317022e325fb018bf7"
@@ -4145,8 +4150,14 @@ react-dom@^16.8.6:
     prop-types "^15.6.2"
     scheduler "^0.13.6"
 
-react-fuzzy-highlighter@../lib:
-  version "0.0.0"
+react-fuzzy-highlighter@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/react-fuzzy-highlighter/-/react-fuzzy-highlighter-0.2.1.tgz#782d9a8afd4bfc77468811724010694c2f7f2898"
+  integrity sha512-TawfNFQ5T0MQX3fdJVJNl6oEdRh5l4JsxbBN3gCkBghLi+CWKTe0gbt1EqoXvp5uZxKqYW01lUugtKf8P8GUIA==
+  dependencies:
+    fuse.js "^3.4.5"
+    set-value "^3.0.1"
+    strind "^0.2.1"
 
 react-is@^16.8.1:
   version "16.8.6"
@@ -4487,6 +4498,13 @@ set-value@^2.0.0, set-value@^2.0.1:
     is-plain-object "^2.0.3"
     split-string "^3.0.1"
 
+set-value@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/set-value/-/set-value-3.0.1.tgz#52c82af7653ba69eb1db92e81f5cdb32739b9e95"
+  integrity sha512-w6n3GUPYAWQj4ZyHWzD7K2FnFXHx9OTwJYbWg+6nXjG8sCLfs9DGv+KlqglKIIJx+ks7MlFuwFW2RBPb+8V+xg==
+  dependencies:
+    is-plain-object "^2.0.4"
+
 setimmediate@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/setimmediate/-/setimmediate-1.0.5.tgz#290cbb232e306942d7d7ea9b83732ab7856f8285"
@@ -4698,6 +4716,11 @@ stream-http@^2.7.2:
     readable-stream "^2.3.6"
     to-arraybuffer "^1.0.0"
     xtend "^4.0.0"
+
+strind@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/strind/-/strind-0.2.1.tgz#b093cb4e6b90071faf1083e3026a0190af4b5ac3"
+  integrity sha512-P0XBqvEta3FsV020Vg9ticmbIWC8B1Xa/uL55i9c0lBXsA2J/2ge+dzkG1xwHfIYeLf9TrfhKuAus/KuDSz9DA==
 
 string-width@^1.0.1:
   version "1.0.2"
