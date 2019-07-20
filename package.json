@@ -71,6 +71,11 @@
       "enzyme-to-json/serializer"
     ]
   },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/metonym/react-fuzzy-highlighter.git"
