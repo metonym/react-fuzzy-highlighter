@@ -10,7 +10,7 @@
     "develop": "tsc -w",
     "build": "rm -rf lib && tsc -p tsconfig.prod.json",
     "lint": "tslint --fix -p . -c tslint.json",
-    "test": "jest",
+    "test": "jest --coverage",
     "test:tdd": "jest --watch",
     "prepublishOnly": "yarn build"
   },
