@@ -2,6 +2,6 @@
 
 rm -rf docs/
 cd examples/
-yarn build -d ../docs --no-source-maps
+yarn build --public-url . -d ../docs --no-source-maps
 
 exit 0;
