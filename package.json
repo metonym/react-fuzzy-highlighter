@@ -12,7 +12,8 @@
     "lint": "tslint --fix -p . -c tslint.json",
     "test": "jest --coverage",
     "test:tdd": "jest --watch",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "yarn build",
+    "docs": "bash scripts/docs.sh"
   },
   "dependencies": {
     "fuse.js": "^3.4.5",
