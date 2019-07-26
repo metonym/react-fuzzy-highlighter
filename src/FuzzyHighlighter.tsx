@@ -9,9 +9,7 @@ class FuzzyHighlighter<T, O> extends React.Component<
   public readonly state: IFuzzyHighlighterState<T> = {
     results: [],
     cache: {},
-    info: {
-      timing: 0
-    }
+    info: { timing: 0 }
   };
   private fuse!: Fuse<T, Options<O>>;
 
@@ -31,14 +29,9 @@ class FuzzyHighlighter<T, O> extends React.Component<
     }
 
     if (prevProps.data !== this.props.data) {
-      this.setState(
-        {
-          cache: {}
-        },
-        () => {
-          this.search();
-        }
-      );
+      this.setState({ cache: {} }, () => {
+        this.search();
+      });
     }
   }
 
@@ -72,8 +65,9 @@ class FuzzyHighlighter<T, O> extends React.Component<
 
     const start = window.performance.now();
     const search: unknown = this.fuse.search(query);
-    const results = search as ReadonlyArray<Fuse.FuseResult<T>>;
     const end = window.performance.now();
+    const results = search as ReadonlyArray<Fuse.FuseResult<T>>;
+    const timing = parseFloat((end - start).toFixed(3));
 
     this.setState({
       results,
@@ -81,9 +75,7 @@ class FuzzyHighlighter<T, O> extends React.Component<
         ...cache,
         [query]: results
       },
-      info: {
-        timing: parseFloat((end - start).toFixed(3))
-      }
+      info: { timing }
     });
   }
 }
@@ -107,12 +99,8 @@ export type Results<T> = ReadonlyArray<Result<T>>;
 
 interface IFuzzyHighlighterState<T> {
   results: Results<T>;
-  cache: {
-    [query: string]: ReadonlyArray<FuseResult<T>>;
-  };
-  info: {
-    timing: number;
-  };
+  cache: { [query: string]: ReadonlyArray<FuseResult<T>> };
+  info: { timing: number };
 }
 
 export default FuzzyHighlighter;
