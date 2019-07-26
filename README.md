@@ -6,9 +6,9 @@
 
 > Lightweight fuzzy search highlighting component using [`fuse.js`](https://github.com/krisk/Fuse).
 
-This component provides matched and unmatched text in a more iterable format.
+This component wraps `fuse.js` and provides matched and unmatched text in an iterable format.
 
-## [Examples](examples/) · [Changelog](CHANGELOG.md)
+## [Demo](https://metonym.github.io/react-fuzzy-highlighter/) · [Changelog](CHANGELOG.md)
 
 ## Install
 
@@ -53,17 +53,7 @@ export default class extends React.Component {
 
                 return (
                   <li key={resultIndex}>
-                    <div>
-                      <Highlighter text={formattedResult.formatted.title} />
-                    </div>
-                    <div>
-                      <Highlighter
-                        text={formattedResult.formatted.author.firstName}
-                      />{' '}
-                      <Highlighter
-                        text={formattedResult.formatted.author.lastName}
-                      />
-                    </div>
+                    <Highlighter text={formattedResult.formatted.title} />
                   </li>
                 );
               })}
@@ -75,6 +65,10 @@ export default class extends React.Component {
   }
 }
 ```
+
+## Example
+
+The [examples](examples/) folder contains the source code used for the [demo](https://metonym.github.io/react-fuzzy-highlighter/).
 
 ## License
 
