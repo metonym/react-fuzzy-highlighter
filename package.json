@@ -78,11 +78,6 @@
       "@commitlint/config-conventional"
     ]
   },
-  "resolutions": {
-    "**/**/lodash": "^4.17.12",
-    "**/**/mixin-deep": "^2.0.1",
-    "**/**/set-value": "^3.0.1"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/metonym/react-fuzzy-highlighter.git"
