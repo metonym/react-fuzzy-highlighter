@@ -4420,10 +4420,10 @@ stealthy-require@^1.1.1:
   resolved "https://registry.yarnpkg.com/stealthy-require/-/stealthy-require-1.1.1.tgz#35b09875b4ff49f26a777e509b3090a3226bf24b"
   integrity sha1-NbCYdbT/SfJqd35QmzCQoyJr8ks=
 
-strind@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/strind/-/strind-0.2.1.tgz#b093cb4e6b90071faf1083e3026a0190af4b5ac3"
-  integrity sha512-P0XBqvEta3FsV020Vg9ticmbIWC8B1Xa/uL55i9c0lBXsA2J/2ge+dzkG1xwHfIYeLf9TrfhKuAus/KuDSz9DA==
+strind@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/strind/-/strind-0.3.0.tgz#e50e79c8468689d83162dacb44c209258c3b73d2"
+  integrity sha512-xnNz310DuDpGNyIRclImJKLJf0cloTdulrYDf/Xc0IYUUUyEP7bk+bJt//WcECkpNE/HVV+3YFmT2P6hP28FBw==
 
 string-length@^2.0.0:
   version "2.0.0"
