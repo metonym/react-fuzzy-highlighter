@@ -4,11 +4,11 @@
   "license": "MIT",
   "description": "Lightweight fuzzy search highlighting component using fuse.js",
   "author": "Eric Liu (https://github.com/metonym)",
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "develop": "tsc -w",
-    "build": "rm -rf lib && tsc -p tsconfig.prod.json",
+    "build": "tsc -p tsconfig.prod.json",
     "lint": "tslint --fix -p . -c tslint.json",
     "test": "jest --coverage",
     "test:tdd": "jest --watch",
@@ -18,39 +18,40 @@
   "dependencies": {
     "fuse.js": "^3.4.5",
     "set-value": "^3.0.1",
-    "strind": "^0.2.1"
+    "strind": "^0.3.0"
+  },
+  "peerDependencies": {
+    "react": "^16.x",
+    "react-dom": "^16.x"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.1.0",
-    "@commitlint/config-conventional": "^8.1.0",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
     "@types/enzyme": "^3.10.3",
     "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/enzyme-to-json": "^1.5.3",
-    "@types/jest": "^24.0.16",
-    "@types/react": "^16.8.24",
-    "@types/react-dom": "^16.8.5",
+    "@types/jest": "^24.0.18",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
     "@types/set-value": "^2.0.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
-    "enzyme-to-json": "^3.3.5",
-    "husky": "^3.0.2",
-    "jest": "^24.8.0",
+    "enzyme-to-json": "^3.4.0",
+    "husky": "^3.0.5",
+    "jest": "^24.9.0",
     "prettier": "^1.18.2",
     "pretty-quick": "^1.11.1",
-    "react": "^16.3.0",
-    "react-dom": "^16.3.0",
-    "ts-jest": "^24.0.2",
-    "tslint": "^5.18.0",
+    "react": "^16.x",
+    "react-dom": "^16.x",
+    "ts-jest": "^24.1.0",
+    "tslint": "^5.20.0",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.5.3"
-  },
-  "peerDependencies": {
-    "react": "^16.3.0",
-    "react-dom": "^16.3.0"
+    "typescript": "^3.6.3"
   },
   "husky": {
     "hooks": {
       "pre-commit": "yarn lint && pretty-quick --staged",
+      "pre-push": "yarn test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
@@ -61,10 +62,6 @@
   },
   "jest": {
     "preset": "ts-jest",
-    "testEnvironment": "jsdom",
-    "testMatch": [
-      "<rootDir>src/**/*.(spec|test).{ts,tsx}"
-    ],
     "setupFilesAfterEnv": [
       "<rootDir>src/tests/setup.ts"
     ],
@@ -76,11 +73,6 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
-  },
-  "resolutions": {
-    "**/**/lodash": "^4.17.12",
-    "**/**/mixin-deep": "^2.0.1",
-    "**/**/set-value": "^3.0.1"
   },
   "repository": {
     "type": "git",
@@ -94,7 +86,7 @@
     "highlight"
   ],
   "files": [
-    "lib/"
+    "lib"
   ],
   "bugs": "https://github.com/metonym/react-fuzzy-highlighter/issues"
 }
