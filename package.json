@@ -13,7 +13,7 @@
     "test": "jest --coverage",
     "test:tdd": "jest --watch",
     "prepublishOnly": "yarn build",
-    "docs": "bash scripts/docs.sh"
+    "docs": "node scripts/docs.js"
   },
   "dependencies": {
     "fuse.js": "^3.4.5",
