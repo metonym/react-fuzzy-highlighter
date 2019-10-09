@@ -29,6 +29,7 @@ class FuzzyHighlighter<T, O> extends React.Component<
     }
 
     if (prevProps.data !== this.props.data) {
+      this.fuse.setCollection(this.props.data);
       this.setState({ cache: {} }, this.search);
     }
   }
@@ -55,9 +56,7 @@ class FuzzyHighlighter<T, O> extends React.Component<
     if (Object(cache).hasOwnProperty(query)) {
       return this.setState({
         results: cache[query],
-        info: {
-          timing: 0
-        }
+        info: { timing: 0 }
       });
     }
 
@@ -69,10 +68,7 @@ class FuzzyHighlighter<T, O> extends React.Component<
 
     this.setState({
       results,
-      cache: {
-        ...cache,
-        [query]: results
-      },
+      cache: { ...cache, [query]: results },
       info: { timing }
     });
   }

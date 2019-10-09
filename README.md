@@ -20,7 +20,7 @@ yarn add react-fuzzy-highlighter
 
 ```jsx
 import * as React from 'react';
-import FuzzyHighlighter from 'react-fuzzy-highlighter';
+import FuzzyHighlighter, { Highlighter } from 'react-fuzzy-highlighter';
 
 export default class extends React.Component {
   render() {
