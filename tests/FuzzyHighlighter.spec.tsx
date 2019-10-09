@@ -1,7 +1,7 @@
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import { FuseOptions } from 'fuse.js';
 import * as React from 'react';
-import FuzzyHighlighter from '../FuzzyHighlighter';
+import FuzzyHighlighter from '../src/FuzzyHighlighter';
 
 let search: jest.SpyInstance<void, []>;
 

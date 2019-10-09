@@ -2,7 +2,7 @@ import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import * as React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
-import { Highlighter } from '../Highlighter';
+import { Highlighter } from '../src/Highlighter';
 
 describe('Highlighter', () => {
   it('renders without crashing', () => {
