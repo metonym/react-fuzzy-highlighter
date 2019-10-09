@@ -8,7 +8,7 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "develop": "tsc -w",
-    "build": "tsc -p tsconfig.prod.json",
+    "build": "tsc",
     "lint": "tslint --fix -p . -c tslint.json",
     "test": "jest --coverage",
     "test:tdd": "jest --watch",
@@ -64,7 +64,7 @@
   "jest": {
     "preset": "ts-jest",
     "setupFilesAfterEnv": [
-      "<rootDir>src/tests/setup.ts"
+      "<rootDir>tests/setup.ts"
     ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
