@@ -116,6 +116,18 @@ describe('FuzzyHighlighter', () => {
     expect(Object.keys(wrapper.state().cache).length).toEqual(2);
     wrapper.setProps({ data: [{ title: 'War' }, { title: 'Artist' }] });
     expect(search).toHaveBeenCalledTimes(3);
+    expect(wrapper.state().results).toEqual([]);
     expect(Object.keys(wrapper.state().cache).length).toEqual(1);
+    wrapper.setProps({ query: 'artist' });
+    expect(search).toHaveBeenCalledTimes(4);
+    expect(wrapper.state().results).toEqual([
+      {
+        item: { title: 'Artist' },
+        matches: [
+          { indices: [[0, 5]], value: 'Artist', key: 'title', arrayIndex: 0 }
+        ]
+      }
+    ]);
+    expect(Object.keys(wrapper.state().cache).length).toEqual(2);
   });
 });
