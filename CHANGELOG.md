@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Allow custom highlight tags
 
+## [0.3.1](https://github.com/metonym/react-fuzzy-highlighter/releases/tag/0.3.1) - 2019-10-13
+
+- Upgrade development dependencies (pretty-quick, react, react-dom, @types/react, typescript)
+
 ## [0.3.0](https://github.com/metonym/react-fuzzy-highlighter/releases/tag/0.3.0) - 2019-10-08
 
 - Fix bug where collection is not updated if data changes
