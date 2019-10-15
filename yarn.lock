@@ -4487,9 +4487,9 @@ stealthy-require@^1.1.1:
   integrity sha1-NbCYdbT/SfJqd35QmzCQoyJr8ks=
 
 strind@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/strind/-/strind-0.3.0.tgz#e50e79c8468689d83162dacb44c209258c3b73d2"
-  integrity sha512-xnNz310DuDpGNyIRclImJKLJf0cloTdulrYDf/Xc0IYUUUyEP7bk+bJt//WcECkpNE/HVV+3YFmT2P6hP28FBw==
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/strind/-/strind-0.3.1.tgz#1971292da9c45caeac1a4d86324da20f4a417cda"
+  integrity sha512-GDpPHZTkWMZcYesCF5MoUR38mQa6n0oo6V8ZBoIeU5pCJevbxmHISFRWy1qheVPZhNm3syOG2m0Hn9QMuIugHg==
 
 string-length@^2.0.0:
   version "2.0.0"
