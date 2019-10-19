@@ -28,14 +28,12 @@
     "@commitlint/config-conventional": "^8.2.0",
     "@types/enzyme": "^3.10.3",
     "@types/enzyme-adapter-react-16": "^1.0.5",
-    "@types/enzyme-to-json": "^1.5.3",
     "@types/jest": "^24.0.18",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
     "@types/set-value": "^2.0.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
-    "enzyme-to-json": "^3.4.0",
     "husky": "^3.0.5",
     "jest": "^24.9.0",
     "prettier": "^1.18.2",
@@ -64,9 +62,6 @@
     "preset": "ts-jest",
     "setupFilesAfterEnv": [
       "<rootDir>tests/setup.ts"
-    ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
     ]
   },
   "commitlint": {

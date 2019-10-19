@@ -1,5 +1,4 @@
 import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
 import * as React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 import { Highlighter } from '../src/Highlighter';
@@ -20,11 +19,11 @@ describe('Highlighter', () => {
         ]}
       />
     );
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper.html()).toEqual('<mark>O</mark>ld');
   });
 
   test('prop `text` as a string', () => {
     const wrapper = shallow(<Highlighter text={'Old'} />);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper.html()).toEqual('Old');
   });
 });
