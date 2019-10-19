@@ -9,7 +9,7 @@
   "scripts": {
     "develop": "tsc -w",
     "build": "tsc",
-    "lint": "tslint --fix -p . -c tslint.json",
+    "lint": "tslint --fix -p .",
     "test": "jest --coverage",
     "test:tdd": "jest --watch",
     "prepublishOnly": "yarn build",
