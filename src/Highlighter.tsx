@@ -22,7 +22,7 @@ function Highlighter(props: IHighlighterProps) {
 }
 
 interface IHighlighterProps {
-  text: string | Array<{ text: string; isHighlighted: boolean }>;
+  text: string | { text: string; isHighlighted: boolean }[];
 }
 
 export { Highlighter };

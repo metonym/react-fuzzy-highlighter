@@ -1,4 +1,4 @@
-import Fuse, { FuseResult } from 'fuse.js';
+import Fuse, { FuseResultWithMatches } from 'fuse.js';
 import * as React from 'react';
 import { FinalResults, formatResults } from './formatResults';
 
@@ -11,7 +11,7 @@ class FuzzyHighlighter<T, O> extends React.Component<
     cache: {},
     info: { timing: 0 }
   };
-  private fuse!: Fuse<T, Options<O>>;
+  private fuse!: Fuse<T, Options<T>>;
 
   public componentDidMount() {
     const { data, options } = this.props;
@@ -54,16 +54,13 @@ class FuzzyHighlighter<T, O> extends React.Component<
     const { cache } = this.state;
 
     if (Object(cache).hasOwnProperty(query)) {
-      return this.setState({
-        results: cache[query],
-        info: { timing: 0 }
-      });
+      return this.setState({ results: cache[query], info: { timing: 0 } });
     }
 
     const start = window.performance.now();
     const search: unknown = this.fuse.search(query);
     const end = window.performance.now();
-    const results = search as ReadonlyArray<Fuse.FuseResult<T>>;
+    const results = search as ReadonlyArray<Fuse.FuseResultWithMatches<T>>;
     const timing = parseFloat((end - start).toFixed(3));
 
     this.setState({
@@ -75,25 +72,25 @@ class FuzzyHighlighter<T, O> extends React.Component<
 }
 
 type Data<T> = ReadonlyArray<T>;
-type Options<O> = Fuse.FuseOptions<Readonly<O>>;
+type Options<T> = Fuse.FuseOptions<T>;
 
 interface IFuzzyHighlighterProps<T, O> {
   query: string;
   data: Data<T>;
-  options?: Options<O>;
+  options?: Options<T>;
   children?: (params: {
-    results: ReadonlyArray<FuseResult<T>>;
+    results: ReadonlyArray<FuseResultWithMatches<T>>;
     formattedResults: FinalResults<T>;
     timing: number;
   }) => React.ReactNode;
 }
 
-export type Result<T> = FuseResult<T>;
+export type Result<T> = FuseResultWithMatches<T>;
 export type Results<T> = ReadonlyArray<Result<T>>;
 
 interface IFuzzyHighlighterState<T> {
   results: Results<T>;
-  cache: { [query: string]: ReadonlyArray<FuseResult<T>> };
+  cache: { [query: string]: ReadonlyArray<FuseResultWithMatches<T>> };
   info: { timing: number };
 }
 

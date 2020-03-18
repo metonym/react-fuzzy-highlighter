@@ -39,11 +39,11 @@ interface IFinalResult<T> extends Result<T> {
   formatted: T | IFormatted;
 }
 
-export type FinalResults<T> = Array<IFinalResult<T>>;
+export type FinalResults<T> = IFinalResult<T>[];
 
 interface IFuzzyResult {
   arrayIndex: number;
-  indices: Array<[number, number]>;
+  indices: [number, number][];
   key: string;
   value: string;
 }
