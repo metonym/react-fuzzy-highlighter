@@ -1,11 +1,11 @@
-import { mount } from 'enzyme';
-import { FuseOptions } from 'fuse.js';
-import * as React from 'react';
-import FuzzyHighlighter from '../src/FuzzyHighlighter';
+import { mount } from "enzyme";
+import { FuseOptions } from "fuse.js";
+import * as React from "react";
+import FuzzyHighlighter from "../FuzzyHighlighter";
 
 let search: jest.SpyInstance<void, []>;
 
-describe('FuzzyHighlighter', () => {
+describe("FuzzyHighlighter", () => {
   afterEach(() => {
     jest.clearAllMocks();
 
@@ -14,36 +14,36 @@ describe('FuzzyHighlighter', () => {
     }
   });
 
-  it('instantiates without crashing', () => {
+  it("instantiates without crashing", () => {
     const wrapper = mount<FuzzyHighlighter<{ t: string }, undefined>>(
-      <FuzzyHighlighter<{ t: string }, undefined> query="" data={[{ t: '' }]} />
+      <FuzzyHighlighter<{ t: string }, undefined> query="" data={[{ t: "" }]} />
     );
     expect(wrapper).toBeTruthy();
     expect(wrapper.isEmptyRender()).toEqual(true);
   });
 
-  test('search method is called', () => {
-    search = jest.spyOn(FuzzyHighlighter.prototype, 'search');
+  test("search method is called", () => {
+    search = jest.spyOn(FuzzyHighlighter.prototype, "search");
     expect(search).toHaveBeenCalledTimes(0);
     const wrapper = mount<FuzzyHighlighter<{ t: string }, undefined>>(
-      <FuzzyHighlighter<{ t: string }, undefined> query="" data={[{ t: '' }]}>
+      <FuzzyHighlighter<{ t: string }, undefined> query="" data={[{ t: "" }]}>
         {({ results }) => JSON.stringify(results)}
       </FuzzyHighlighter>
     );
 
     expect(search).toHaveBeenCalledTimes(1);
-    wrapper.setProps({ query: 'data' });
+    wrapper.setProps({ query: "data" });
     expect(search).toHaveBeenCalledTimes(2);
   });
 
-  test('search has cache', () => {
+  test("search has cache", () => {
     const wrapper = mount<FuzzyHighlighter<{ title: string }, undefined>>(
       <FuzzyHighlighter<{ title: string }, FuseOptions<{ title: string }>>
         query=""
         data={[
           { title: "Old Man's War" },
-          { title: 'The Lock Artist' },
-          { title: 'HTML5' }
+          { title: "The Lock Artist" },
+          { title: "HTML5" },
         ]}
         options={{
           shouldSort: true,
@@ -53,17 +53,17 @@ describe('FuzzyHighlighter', () => {
           distance: 100,
           maxPatternLength: 32,
           minMatchCharLength: 1,
-          keys: ['title']
+          keys: ["title"],
         }}
       >
         {({ results }) => JSON.stringify(results)}
       </FuzzyHighlighter>
     );
 
-    expect(wrapper.state().cache).toEqual({ '': [] });
-    wrapper.setProps({ query: 'old' });
+    expect(wrapper.state().cache).toEqual({ "": [] });
+    wrapper.setProps({ query: "old" });
     expect(wrapper.state().cache).toEqual({
-      '': [],
+      "": [],
       old: [
         {
           item: { title: "Old Man's War" },
@@ -71,29 +71,29 @@ describe('FuzzyHighlighter', () => {
             {
               arrayIndex: 0,
               indices: [[0, 2]],
-              key: 'title',
-              value: "Old Man's War"
-            }
-          ]
-        }
-      ]
+              key: "title",
+              value: "Old Man's War",
+            },
+          ],
+        },
+      ],
     });
 
     expect(wrapper.state().info.timing).toBeGreaterThan(0);
-    wrapper.setProps({ query: '' });
+    wrapper.setProps({ query: "" });
     expect(wrapper.state().info.timing).toEqual(0);
   });
 
-  test('search and clear cache if data changes', () => {
-    search = jest.spyOn(FuzzyHighlighter.prototype, 'search');
+  test("search and clear cache if data changes", () => {
+    search = jest.spyOn(FuzzyHighlighter.prototype, "search");
 
     const wrapper = mount<FuzzyHighlighter<{ title: string }, undefined>>(
       <FuzzyHighlighter<{ title: string }, FuseOptions<{ title: string }>>
         query=""
         data={[
           { title: "Old Man's War" },
-          { title: 'The Lock Artist' },
-          { title: 'HTML5' }
+          { title: "The Lock Artist" },
+          { title: "HTML5" },
         ]}
         options={{
           shouldSort: true,
@@ -103,7 +103,7 @@ describe('FuzzyHighlighter', () => {
           distance: 100,
           maxPatternLength: 32,
           minMatchCharLength: 1,
-          keys: ['title']
+          keys: ["title"],
         }}
       >
         {({ results }) => JSON.stringify(results)}
@@ -111,22 +111,22 @@ describe('FuzzyHighlighter', () => {
     );
 
     expect(search).toHaveBeenCalledTimes(1);
-    wrapper.setProps({ query: 'old' });
+    wrapper.setProps({ query: "old" });
     expect(search).toHaveBeenCalledTimes(2);
     expect(Object.keys(wrapper.state().cache).length).toEqual(2);
-    wrapper.setProps({ data: [{ title: 'War' }, { title: 'Artist' }] });
+    wrapper.setProps({ data: [{ title: "War" }, { title: "Artist" }] });
     expect(search).toHaveBeenCalledTimes(3);
     expect(wrapper.state().results).toEqual([]);
     expect(Object.keys(wrapper.state().cache).length).toEqual(1);
-    wrapper.setProps({ query: 'artist' });
+    wrapper.setProps({ query: "artist" });
     expect(search).toHaveBeenCalledTimes(4);
     expect(wrapper.state().results).toEqual([
       {
-        item: { title: 'Artist' },
+        item: { title: "Artist" },
         matches: [
-          { indices: [[0, 5]], value: 'Artist', key: 'title', arrayIndex: 0 }
-        ]
-      }
+          { indices: [[0, 5]], value: "Artist", key: "title", arrayIndex: 0 },
+        ],
+      },
     ]);
     expect(Object.keys(wrapper.state().cache).length).toEqual(2);
   });

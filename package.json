@@ -7,11 +7,9 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "build": "tsc",
-    "lint": "tslint --fix -p .",
     "test": "jest --coverage",
     "test:tdd": "jest --watch",
-    "prepack": "yarn build"
+    "prepack": "tsc"
   },
   "dependencies": {
     "fuse.js": "^3.4.5",
@@ -40,7 +38,7 @@
   "jest": {
     "preset": "ts-jest",
     "setupFilesAfterEnv": [
-      "<rootDir>tests/setup.ts"
+      "<rootDir>src/tests/setup.ts"
     ]
   },
   "repository": {
