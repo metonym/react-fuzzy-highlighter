@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "rm -rf dist && parcel build src/index.html --no-source-maps",
+    "build": "rm -rf dist && parcel build --public-url . src/index.html --no-source-maps",
     "deploy": "node gh-pages"
   },
   "dependencies": {
