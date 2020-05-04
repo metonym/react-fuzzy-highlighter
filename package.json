@@ -23,8 +23,6 @@
     "react-dom": "^16.x"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.2.0",
-    "@commitlint/config-conventional": "^8.2.0",
     "@types/enzyme": "^3.10.3",
     "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/jest": "^25.1.1",
@@ -33,28 +31,11 @@
     "@types/set-value": "^2.0.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
-    "husky": "^4.0.7",
     "jest": "^25.1.0",
-    "prettier": "^2.0.2",
-    "pretty-quick": "^2.0.0",
     "react": "^16.x",
     "react-dom": "^16.x",
     "ts-jest": "^25.1.0",
-    "tslint": "^6.0.0",
-    "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.6.3"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint && pretty-quick --staged",
-      "pre-push": "yarn test",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
-  "prettier": {
-    "tabWidth": 2,
-    "semi": true,
-    "singleQuote": true
   },
   "jest": {
     "preset": "ts-jest",
@@ -62,16 +43,12 @@
       "<rootDir>tests/setup.ts"
     ]
   },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/metonym/react-fuzzy-highlighter.git"
   },
   "homepage": "https://github.com/metonym/react-fuzzy-highlighter",
+  "bugs": "https://github.com/metonym/react-fuzzy-highlighter/issues",
   "keywords": [
     "react",
     "fuzzy",
@@ -80,6 +57,5 @@
   ],
   "files": [
     "lib"
-  ],
-  "bugs": "https://github.com/metonym/react-fuzzy-highlighter/issues"
+  ]
 }
