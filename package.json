@@ -11,8 +11,7 @@
     "lint": "tslint --fix -p .",
     "test": "jest --coverage",
     "test:tdd": "jest --watch",
-    "prepublishOnly": "yarn build",
-    "docs": "node scripts/docs.js"
+    "prepack": "yarn build"
   },
   "dependencies": {
     "fuse.js": "^3.4.5",
@@ -40,7 +39,6 @@
     "pretty-quick": "^2.0.0",
     "react": "^16.x",
     "react-dom": "^16.x",
-    "shelljs": "^0.8.3",
     "ts-jest": "^25.1.0",
     "tslint": "^6.0.0",
     "tslint-config-prettier": "^1.18.0",
