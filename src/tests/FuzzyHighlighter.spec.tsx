@@ -1,5 +1,5 @@
 import { mount } from "enzyme";
-import { FuseOptions } from "fuse.js";
+import Fuse from "fuse.js";
 import * as React from "react";
 import FuzzyHighlighter from "../FuzzyHighlighter";
 
@@ -38,7 +38,7 @@ describe("FuzzyHighlighter", () => {
 
   test("search has cache", () => {
     const wrapper = mount<FuzzyHighlighter<{ title: string }, undefined>>(
-      <FuzzyHighlighter<{ title: string }, FuseOptions<{ title: string }>>
+      <FuzzyHighlighter<{ title: string }, Fuse.IFuseOptions<{ title: string }>>
         query=""
         data={[
           { title: "Old Man's War" },
@@ -51,7 +51,6 @@ describe("FuzzyHighlighter", () => {
           threshold: 0.6,
           location: 0,
           distance: 100,
-          maxPatternLength: 32,
           minMatchCharLength: 1,
           keys: ["title"],
         }}
@@ -69,12 +68,12 @@ describe("FuzzyHighlighter", () => {
           item: { title: "Old Man's War" },
           matches: [
             {
-              arrayIndex: 0,
               indices: [[0, 2]],
               key: "title",
               value: "Old Man's War",
             },
           ],
+          refIndex: 0
         },
       ],
     });
@@ -88,7 +87,7 @@ describe("FuzzyHighlighter", () => {
     search = jest.spyOn(FuzzyHighlighter.prototype, "search");
 
     const wrapper = mount<FuzzyHighlighter<{ title: string }, undefined>>(
-      <FuzzyHighlighter<{ title: string }, FuseOptions<{ title: string }>>
+      <FuzzyHighlighter<{ title: string }, Fuse.IFuseOptions<{ title: string }>>
         query=""
         data={[
           { title: "Old Man's War" },
@@ -101,7 +100,6 @@ describe("FuzzyHighlighter", () => {
           threshold: 0.6,
           location: 0,
           distance: 100,
-          maxPatternLength: 32,
           minMatchCharLength: 1,
           keys: ["title"],
         }}
@@ -124,8 +122,9 @@ describe("FuzzyHighlighter", () => {
       {
         item: { title: "Artist" },
         matches: [
-          { indices: [[0, 5]], value: "Artist", key: "title", arrayIndex: 0 },
+          { indices: [[0, 5]], value: "Artist", key: "title"  },
         ],
+        refIndex: 1
       },
     ]);
     expect(Object.keys(wrapper.state().cache).length).toEqual(2);

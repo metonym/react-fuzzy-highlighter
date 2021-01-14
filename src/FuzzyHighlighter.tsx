@@ -1,4 +1,4 @@
-import Fuse, { FuseResultWithMatches } from 'fuse.js';
+import Fuse from 'fuse.js';
 import * as React from 'react';
 import { FinalResults, formatResults } from './formatResults';
 
@@ -11,7 +11,7 @@ class FuzzyHighlighter<T, O> extends React.Component<
     cache: {},
     info: { timing: 0 }
   };
-  private fuse!: Fuse<T, Options<T>>;
+  private fuse!: Fuse<T>;
 
   public componentDidMount() {
     const { data, options } = this.props;
@@ -60,7 +60,7 @@ class FuzzyHighlighter<T, O> extends React.Component<
     const start = window.performance.now();
     const search: unknown = this.fuse.search(query);
     const end = window.performance.now();
-    const results = search as ReadonlyArray<Fuse.FuseResultWithMatches<T>>;
+    const results = search as Fuse.FuseResult<T>[];
     const timing = parseFloat((end - start).toFixed(3));
 
     this.setState({
@@ -72,25 +72,25 @@ class FuzzyHighlighter<T, O> extends React.Component<
 }
 
 type Data<T> = ReadonlyArray<T>;
-type Options<T> = Fuse.FuseOptions<T>;
+type Options<T> = Fuse.IFuseOptions<T>;
 
 interface IFuzzyHighlighterProps<T, O> {
   query: string;
   data: Data<T>;
   options?: Options<T>;
   children?: (params: {
-    results: ReadonlyArray<FuseResultWithMatches<T>>;
+    results: ReadonlyArray<Fuse.FuseResult<T>>;
     formattedResults: FinalResults<T>;
     timing: number;
   }) => React.ReactNode;
 }
 
-export type Result<T> = FuseResultWithMatches<T>;
+export type Result<T> = Fuse.FuseResult<T>;
 export type Results<T> = ReadonlyArray<Result<T>>;
 
 interface IFuzzyHighlighterState<T> {
   results: Results<T>;
-  cache: { [query: string]: ReadonlyArray<FuseResultWithMatches<T>> };
+  cache: { [query: string]: ReadonlyArray<Fuse.FuseResult<T>> };
   info: { timing: number };
 }
 
