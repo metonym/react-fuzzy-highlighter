@@ -12,12 +12,12 @@ describe("format results", () => {
               lastName: "Scalzi",
             },
           },
+          refIndex: 0,
           matches: [
             {
               indices: [[0, 3]],
               value: "John",
               key: "author.firstName",
-              arrayIndex: 0,
             },
           ],
         },
@@ -26,12 +26,12 @@ describe("format results", () => {
             title: "Monster 1959",
             author: { firstName: "David", lastName: "Maine" },
           },
+          refIndex: 0,
           matches: [
             {
               indices: [[1, 2]],
               value: "Monster 1959",
               key: "title",
-              arrayIndex: 0,
             },
           ],
         },
@@ -40,6 +40,7 @@ describe("format results", () => {
             title: "Colony",
             author: { firstName: "Rob", lastName: "Grant" },
           },
+          refIndex: 0,
           matches: [
             {
               indices: [
@@ -48,7 +49,6 @@ describe("format results", () => {
               ],
               value: "Colony",
               key: "title",
-              arrayIndex: 0,
             },
           ],
         },
@@ -62,6 +62,7 @@ describe("format results", () => {
           },
           title: "Old Man's War",
         },
+        refIndex: 0,
         item: {
           author: {
             firstName: [{ isHighlighted: true, text: "John" }],
@@ -71,7 +72,6 @@ describe("format results", () => {
         },
         matches: [
           {
-            arrayIndex: 0,
             indices: [[0, 3]],
             key: "author.firstName",
             value: "John",
@@ -87,13 +87,13 @@ describe("format results", () => {
             { isHighlighted: false, text: "ster 1959" },
           ],
         },
+        refIndex: 0,
         item: {
           author: { firstName: "David", lastName: "Maine" },
           title: "Monster 1959",
         },
         matches: [
           {
-            arrayIndex: 0,
             indices: [[1, 2]],
             key: "title",
             value: "Monster 1959",
@@ -111,13 +111,13 @@ describe("format results", () => {
             { isHighlighted: false, text: "y" },
           ],
         },
+        refIndex: 0,
         item: {
           author: { firstName: "Rob", lastName: "Grant" },
           title: "Colony",
         },
         matches: [
           {
-            arrayIndex: 0,
             indices: [
               [1, 1],
               [3, 4],

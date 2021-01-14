@@ -7,8 +7,9 @@ function formatResults<T>(results: Results<T>): FinalResults<T> {
 
   results.forEach((result, index) => {
     finalResults.push({ ...result, formatted: { ...result.item } });
-    result.matches.forEach(({ indices, key, value }: IFuzzyResult) => {
-      const output = strind(value, indices, ({ chars: text, matches }) => ({
+    result.matches?.forEach(({ indices, key, value }) => {
+      if (!value || !key) return;
+      const output = strind(value, [...indices], ({ chars: text, matches }) => ({
         text,
         isHighlighted: matches
       }));
@@ -42,8 +43,7 @@ interface IFinalResult<T> extends Result<T> {
 export type FinalResults<T> = IFinalResult<T>[];
 
 interface IFuzzyResult {
-  arrayIndex: number;
-  indices: [number, number][];
+  indices: ReadonlyArray<[number, number]>;
   key: string;
   value: string;
 }
