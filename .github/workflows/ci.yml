@@ -18,7 +18,7 @@ jobs:
           path: "**/node_modules"
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 
-      - name: Build, test, and package the library
+      - name: Test and build the library
         run: |
           yarn
           yarn test
