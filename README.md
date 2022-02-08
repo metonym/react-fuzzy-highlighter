@@ -2,7 +2,6 @@
 
 [![NPM][npm]][npm-url]
 [![Build][build]][build-badge]
-[![Coverage][codecov-shield]][codecov]
 
 > Lightweight fuzzy search highlighting component using [`fuse.js`](https://github.com/krisk/Fuse).
 
@@ -78,5 +77,3 @@ The [examples](examples/) folder contains the source code used for the [demo](ht
 [npm-url]: https://npmjs.com/package/react-fuzzy-highlighter
 [build]: https://travis-ci.com/metonym/react-fuzzy-highlighter.svg?branch=master
 [build-badge]: https://travis-ci.com/metonym/react-fuzzy-highlighter
-[codecov]: https://codecov.io/gh/metonym/react-fuzzy-highlighter
-[codecov-shield]: https://img.shields.io/codecov/c/github/metonym/react-fuzzy-highlighter.svg
