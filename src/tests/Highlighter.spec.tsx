@@ -26,4 +26,20 @@ describe("Highlighter", () => {
     const wrapper = shallow(<Highlighter text={"Old"} />);
     expect(wrapper.html()).toEqual("Old");
   });
+
+  test("prop `mark` as a custom component", () => {
+    const Mark: React.FC = ({children}) => (
+        <span className="marked-text">{children}</span>
+    );
+    const wrapper = shallow(
+        <Highlighter
+            text={[
+              { text: "O", isHighlighted: true },
+              { text: "ld", isHighlighted: false },
+            ]}
+            mark={Mark}
+        />
+    );
+    expect(wrapper.html()).toEqual("<span class=\"marked-text\">O</span>ld");
+  });
 });
