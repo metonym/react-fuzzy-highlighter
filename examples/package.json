@@ -4,7 +4,7 @@
   "scripts": {
     "start": "parcel src/index.html",
     "build": "rm -rf dist && parcel build --public-url . src/index.html --no-source-maps",
-    "deploy": "node gh-pages"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^17.0.2",
