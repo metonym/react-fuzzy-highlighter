@@ -1,6 +1,6 @@
-import set from 'set-value';
-import strind from 'strind';
-import { Result, Results } from './FuzzyHighlighter';
+import set from "set-value";
+import strind from "strind";
+import { Result, Results } from "./FuzzyHighlighter";
 
 function formatResults<T>(results: Results<T>): FinalResults<T> {
   const finalResults: FinalResults<T> = [];
@@ -9,14 +9,18 @@ function formatResults<T>(results: Results<T>): FinalResults<T> {
     finalResults.push({ ...result, formatted: { ...result.item } });
     result.matches?.forEach(({ indices, key, value }) => {
       if (!value || !key) return;
-      const output = strind(value, [...indices], ({ chars: text, matches }) => ({
-        text,
-        isHighlighted: matches
-      }));
+      const output = strind(
+        value,
+        [...indices],
+        ({ chars: text, matches }) => ({
+          text,
+          isHighlighted: matches,
+        })
+      );
       const formattedResult = output.matched as IFormattedResult[];
       const formatted = finalResults[index].formatted as IFormatted;
 
-      if (key.split('.').length > 1) {
+      if (key.split(".").length > 1) {
         set(formatted, key, formattedResult);
       } else {
         formatted[key] = formattedResult;

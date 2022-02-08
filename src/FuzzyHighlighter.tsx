@@ -1,6 +1,6 @@
-import Fuse from 'fuse.js';
-import * as React from 'react';
-import { FinalResults, formatResults } from './formatResults';
+import Fuse from "fuse.js";
+import * as React from "react";
+import { FinalResults, formatResults } from "./formatResults";
 
 class FuzzyHighlighter<T, O> extends React.Component<
   IFuzzyHighlighterProps<T, O>,
@@ -9,7 +9,7 @@ class FuzzyHighlighter<T, O> extends React.Component<
   public readonly state: IFuzzyHighlighterState<T> = {
     results: [],
     cache: {},
-    info: { timing: 0 }
+    info: { timing: 0 },
   };
   private fuse!: Fuse<T>;
 
@@ -18,7 +18,7 @@ class FuzzyHighlighter<T, O> extends React.Component<
     this.fuse = new Fuse(data, {
       ...options,
       shouldSort: true,
-      includeMatches: true
+      includeMatches: true,
     });
     this.search();
   }
@@ -42,7 +42,7 @@ class FuzzyHighlighter<T, O> extends React.Component<
       return children({
         results,
         formattedResults: formatResults(results),
-        timing: info.timing
+        timing: info.timing,
       });
     }
 
@@ -66,7 +66,7 @@ class FuzzyHighlighter<T, O> extends React.Component<
     this.setState({
       results,
       cache: { ...cache, [query]: results },
-      info: { timing }
+      info: { timing },
     });
   }
 }

@@ -1,8 +1,8 @@
-import * as React from 'react';
+import * as React from "react";
 
 function Highlighter(props: IHighlighterProps) {
   if (Array.isArray(props.text)) {
-    const Mark = props.mark || 'mark';
+    const Mark = props.mark || "mark";
     return (
       <>
         {props.text.map(({ text, isHighlighted }, index) => {

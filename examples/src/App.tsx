@@ -1,6 +1,6 @@
-import * as React from 'react';
-import FuzzyHighlighter, { Highlighter } from 'react-fuzzy-highlighter';
-import data from './data/default.json';
+import * as React from "react";
+import FuzzyHighlighter, { Highlighter } from "react-fuzzy-highlighter";
+import data from "./data/default.json";
 
 interface IAppState {
   query: string;
@@ -15,8 +15,8 @@ interface IAppState {
 
 class App extends React.Component<{}, IAppState> {
   public state: IAppState = {
-    query: 'John',
-    data
+    query: "John",
+    data,
   };
 
   public render() {
@@ -38,7 +38,7 @@ class App extends React.Component<{}, IAppState> {
             distance: 100,
             maxPatternLength: 32,
             minMatchCharLength: 1,
-            keys: ['title', 'author.firstName']
+            keys: ["title", "author.firstName"],
           }}
         >
           {({ formattedResults }) => {
@@ -53,9 +53,9 @@ class App extends React.Component<{}, IAppState> {
                     <li
                       key={resultIndex}
                       style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        marginBottom: '1rem'
+                        display: "flex",
+                        flexDirection: "column",
+                        marginBottom: "1rem",
                       }}
                     >
                       <div>
@@ -64,7 +64,7 @@ class App extends React.Component<{}, IAppState> {
                       <div>
                         <Highlighter
                           text={formattedResult.formatted.author.firstName}
-                        />{' '}
+                        />{" "}
                         <Highlighter
                           text={formattedResult.formatted.author.lastName}
                         />
@@ -82,7 +82,7 @@ class App extends React.Component<{}, IAppState> {
 
   private handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     this.setState({
-      query: e.target.value
+      query: e.target.value,
     });
   };
 }

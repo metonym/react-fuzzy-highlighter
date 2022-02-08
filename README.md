@@ -18,8 +18,8 @@ yarn add react-fuzzy-highlighter
 ## Usage
 
 ```jsx
-import * as React from 'react';
-import FuzzyHighlighter, { Highlighter } from 'react-fuzzy-highlighter';
+import * as React from "react";
+import FuzzyHighlighter, { Highlighter } from "react-fuzzy-highlighter";
 
 export default class extends React.Component {
   render() {
@@ -28,8 +28,8 @@ export default class extends React.Component {
         query="old"
         data={[
           { title: "Old Man's War" },
-          { title: 'The Lock Artist' },
-          { title: 'HTML5' }
+          { title: "The Lock Artist" },
+          { title: "HTML5" },
         ]}
         options={{
           shouldSort: true,
@@ -39,7 +39,7 @@ export default class extends React.Component {
           distance: 100,
           maxPatternLength: 32,
           minMatchCharLength: 1,
-          keys: ['title']
+          keys: ["title"],
         }}
       >
         {({ results, formattedResults, timing }) => {

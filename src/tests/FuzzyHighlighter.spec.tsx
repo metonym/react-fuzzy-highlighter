@@ -73,7 +73,7 @@ describe("FuzzyHighlighter", () => {
               value: "Old Man's War",
             },
           ],
-          refIndex: 0
+          refIndex: 0,
         },
       ],
     });
@@ -121,10 +121,8 @@ describe("FuzzyHighlighter", () => {
     expect(wrapper.state().results).toEqual([
       {
         item: { title: "Artist" },
-        matches: [
-          { indices: [[0, 5]], value: "Artist", key: "title"  },
-        ],
-        refIndex: 1
+        matches: [{ indices: [[0, 5]], value: "Artist", key: "title" }],
+        refIndex: 1,
       },
     ]);
     expect(Object.keys(wrapper.state().cache).length).toEqual(2);
