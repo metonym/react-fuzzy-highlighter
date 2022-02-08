@@ -1,6 +1,7 @@
-/node_modules
-/lib
-/coverage
+node_modules
+.cache
+lib
+dist
 
 .DS_Store
 yarn-debug.log*
