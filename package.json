@@ -9,10 +9,12 @@
   "scripts": {
     "test": "jest --coverage",
     "test:tdd": "jest --watch",
-    "prepack": "tsc"
+    "prepack": "tsc",
+    "format": "prettier --ignore-path .gitignore --write ."
   },
   "dependencies": {
     "fuse.js": "^6.4.6",
+    "prettier": "^2.5.1",
     "set-value": "^3.0.1",
     "strind": "^0.3.0"
   },
