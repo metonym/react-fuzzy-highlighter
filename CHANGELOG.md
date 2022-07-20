@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.1](https://github.com/metonym/react-fuzzy-highlighter/releases/tag/1.1.1) - 2022-07-20
+
+- Remove `peerDependencies` to avoid npm install error when using React >=17
+
 ## [1.1.0](https://github.com/metonym/react-fuzzy-highlighter/releases/tag/1.1.0) - 2022-02-07
 
 - Allow Highlighter `mark` element to be customized
