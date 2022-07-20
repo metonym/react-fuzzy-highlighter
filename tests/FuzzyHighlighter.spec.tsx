@@ -12,7 +12,7 @@ import { mount, configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import Fuse from "fuse.js";
 import * as React from "react";
-import FuzzyHighlighter from "../FuzzyHighlighter";
+import FuzzyHighlighter from "../src";
 
 describe("FuzzyHighlighter", () => {
   let search: SpyInstance;

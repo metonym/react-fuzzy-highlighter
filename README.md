@@ -1,8 +1,5 @@
 # react-fuzzy-highlighter
 
-[![NPM][npm]][npm-url]
-[![Build][build]][build-badge]
-
 > Lightweight fuzzy search highlighting component using [`fuse.js`](https://github.com/krisk/Fuse).
 
 This component wraps `fuse.js` and provides matched and unmatched text in an iterable format.
@@ -12,7 +9,14 @@ This component wraps `fuse.js` and provides matched and unmatched text in an ite
 ## Install
 
 ```bash
+# Yarn
 yarn add react-fuzzy-highlighter
+
+# npm
+npm i react-fuzzy-highlighter
+
+# pnpm
+pnpm i react-fuzzy-highlighter
 ```
 
 ## Usage
@@ -67,13 +71,8 @@ export default class extends React.Component {
 
 ## Example
 
-The [examples](examples/) folder contains the source code used for the [demo](https://metonym.github.io/react-fuzzy-highlighter/).
+The [examples](examples) folder contains the source code used for the [demo](https://metonym.github.io/react-fuzzy-highlighter).
 
 ## License
 
 [MIT](LICENSE)
-
-[npm]: https://img.shields.io/npm/v/react-fuzzy-highlighter.svg?color=blue
-[npm-url]: https://npmjs.com/package/react-fuzzy-highlighter
-[build]: https://travis-ci.com/metonym/react-fuzzy-highlighter.svg?branch=master
-[build-badge]: https://travis-ci.com/metonym/react-fuzzy-highlighter
