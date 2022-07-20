@@ -1,17 +1,29 @@
-import { mount } from "enzyme";
+import {
+  afterEach,
+  beforeAll,
+  describe,
+  it,
+  expect,
+  test,
+  vi,
+  SpyInstance,
+} from "vitest";
+import { mount, configure } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
 import Fuse from "fuse.js";
 import * as React from "react";
 import FuzzyHighlighter from "../FuzzyHighlighter";
 
-let search: jest.SpyInstance<void, []>;
-
 describe("FuzzyHighlighter", () => {
-  afterEach(() => {
-    jest.clearAllMocks();
+  let search: SpyInstance;
 
-    if (search !== undefined) {
-      search.mockClear();
-    }
+  beforeAll(() => {
+    configure({ adapter: new Adapter() });
+  });
+
+  afterEach(() => {
+    vi.clearAllMocks();
+    search?.mockClear();
   });
 
   it("instantiates without crashing", () => {
@@ -23,7 +35,7 @@ describe("FuzzyHighlighter", () => {
   });
 
   test("search method is called", () => {
-    search = jest.spyOn(FuzzyHighlighter.prototype, "search");
+    search = vi.spyOn(FuzzyHighlighter.prototype, "search");
     expect(search).toHaveBeenCalledTimes(0);
     const wrapper = mount<FuzzyHighlighter<{ t: string }, undefined>>(
       <FuzzyHighlighter<{ t: string }, undefined> query="" data={[{ t: "" }]}>
@@ -84,7 +96,7 @@ describe("FuzzyHighlighter", () => {
   });
 
   test("search and clear cache if data changes", () => {
-    search = jest.spyOn(FuzzyHighlighter.prototype, "search");
+    search = vi.spyOn(FuzzyHighlighter.prototype, "search");
 
     const wrapper = mount<FuzzyHighlighter<{ title: string }, undefined>>(
       <FuzzyHighlighter<{ title: string }, Fuse.IFuseOptions<{ title: string }>>
