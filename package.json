@@ -18,10 +18,6 @@
     "set-value": "^3.0.1",
     "strind": "^0.3.0"
   },
-  "peerDependencies": {
-    "react": "^16.x",
-    "react-dom": "^16.x"
-  },
   "devDependencies": {
     "@types/enzyme": "^3.10.3",
     "@types/enzyme-adapter-react-16": "^1.0.5",
