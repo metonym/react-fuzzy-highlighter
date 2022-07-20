@@ -1,9 +1,15 @@
-import { shallow } from "enzyme";
+import { beforeAll, describe, it, test, expect } from "vitest";
+import { shallow, configure } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
 import * as React from "react";
 import { render, unmountComponentAtNode } from "react-dom";
 import { Highlighter } from "../Highlighter";
 
 describe("Highlighter", () => {
+  beforeAll(() => {
+    configure({ adapter: new Adapter() });
+  });
+
   it("renders without crashing", () => {
     const div = document.createElement("div");
     render(<Highlighter text="" />, div);
