@@ -3,7 +3,7 @@ import { shallow, configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import * as React from "react";
 import { render, unmountComponentAtNode } from "react-dom";
-import { Highlighter } from "../Highlighter";
+import { Highlighter } from "../src";
 
 describe("Highlighter", () => {
   beforeAll(() => {

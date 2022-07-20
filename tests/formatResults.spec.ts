@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { formatResults } from "../formatResults";
+import { formatResults } from "../src/formatResults";
 
 describe("format results", () => {
   it("highlights the correct indices", () => {
